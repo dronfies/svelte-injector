@@ -51,9 +51,8 @@
 	"scripts": {
 		"clean-lib": "del-cli \"lib/**/*\" \"!lib/package.json\" \"!lib/*.md\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"copy": "cpy ./**/*.svelte ../lib/ --cwd=src --parents",
-		"copy-lib": "cpy ./* ../ --cwd=lib --parents",
-		"build-lib": "tsc && npm run copy && npm run copy-lib && npm run clean-lib",
+		"copy": "cpy ./**/*.svelte ../lib/ --cwd=./src --parents",
+		"build-lib": "tsc && npm run copy",
 		"lib": "npm run clean-lib && npm run build-lib",
 		"lib:w": "npm run clean-lib && nodemon --watch src -e \"*\" --exec \"npm run build-lib\"",
 		"dev": "npm run clean-lib && webpack",
